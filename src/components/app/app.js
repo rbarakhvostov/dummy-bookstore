@@ -24,4 +24,4 @@ const App = () => {
   );
 }
 
-export default withBookstoreService()(App);
+export default App;
