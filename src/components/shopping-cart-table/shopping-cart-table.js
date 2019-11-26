@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import './shopping-cart-table.css';
 
 const ShoppingCartTable = ({ items, total, onIncrease, onDecrease, onDelete }) => {
+  console.log('ShoppingCartTable')
   const renderRow = (item, idx) => {
     const { id, name, count, total } = item;
     return (
