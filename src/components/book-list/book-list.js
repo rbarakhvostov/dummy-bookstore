@@ -33,7 +33,6 @@ class BookListContainer extends Component {
   }
 
   render() {
-    console.log('BookListContainer')
     const { books, loading, error, onAddedToCart } = this.props;
     if (loading) {
       return <Spinner />
@@ -43,7 +42,7 @@ class BookListContainer extends Component {
       return <ErrorIndicator />
     }
 
-    return <BookList books={books} onAddedToCart={onAddedToCart}/>
+    return <BookList books={books} onAddedToCart={onAddedToCart} />
   }
 }
 
