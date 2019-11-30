@@ -32,14 +32,12 @@ const bookRemovedFromCart = (bookId) => {
   }
 }
 
-
 const allBooksRemovedFromCart = (bookId) => {
   return {
     type: 'ALL_BOOKS_REMOVED_FROM_CART',
     payload: bookId,
   }
 }
-
 
 const fetchBooks = (bookstoreService, dispatch) => () => {
   dispatch(booksRequested());
