@@ -1,4 +1,5 @@
 import { createStore, applyMiddleware } from 'redux';
+import thunkMiddleware from 'redux-thunk';
 import reducer from './reducers';
 
 const logMiddleware = ({ getState }) => (next) => (action) => {
@@ -16,9 +17,19 @@ const stringMiddleware = () => (next) => (action) => {
 }
 
 const store = createStore(reducer, applyMiddleware(
-  stringMiddleware, logMiddleware
+  thunkMiddleware, stringMiddleware, logMiddleware
 ));
 
+
 store.dispatch('HELLO');
+
+
+const delayedActionCreator = (timeout) => (dispatch) => {
+  setTimeout(() => dispatch({
+    type: 'DELAYED ACTION'
+  }), timeout);
+}
+
+store.dispatch(delayedActionCreator(3000));
 
 export default store;
