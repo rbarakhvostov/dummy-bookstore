@@ -9,7 +9,6 @@ export default class BookstoreService {
     },
     { 
       id: 2,
-      // eslint-disable-next-line no-script-url
       title: 'JavaScript: The Good Parts',
       author: 'Douglas Crockford',
       price: 16,
