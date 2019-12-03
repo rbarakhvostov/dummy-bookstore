@@ -46,7 +46,10 @@ const updateOrder = (state, bookId, amount) => {
     cartItems: newCartItems,
     orderTotal: newCartItems
                   .map(item => item.total)
-                  .reduce((a, b) => a + b)
+                  .reduce((a, b) => a + b),
+    numItems: newCartItems
+                .map(item => item.count)
+                .reduce((a, b) => a + b)
   }
 }
 
@@ -55,7 +58,8 @@ const updateShoppingCart = (state, action) => {
   if (!state) {
     return {
       cartItems: [],
-      orderTotal: 0
+      orderTotal: 0,
+      numItems: 0
     }
   }
 

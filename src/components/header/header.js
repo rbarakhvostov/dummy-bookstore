@@ -20,8 +20,8 @@ const Header = ({ numItems, orderTotal }) => {
   )
 }
 
-const mapStateToProps = ({shoppingCart:{orderTotal}}) => {
-  return {orderTotal}
+const mapStateToProps = ({shoppingCart:{orderTotal, numItems}}) => {
+  return {orderTotal, numItems}
 }
 
 export default connect(mapStateToProps)(Header);
