@@ -17,11 +17,14 @@ const Header = ({ numItems, orderTotal }) => {
         </div>
       </Link>
     </header>
-  )
+  );
 }
 
 const mapStateToProps = ({shoppingCart:{orderTotal, numItems}}) => {
-  return {orderTotal, numItems}
+  return {
+    orderTotal,
+    numItems
+  }
 }
 
 export default connect(mapStateToProps)(Header);

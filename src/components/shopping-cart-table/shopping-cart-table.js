@@ -7,7 +7,7 @@ import {
 
 import './shopping-cart-table.css';
 
-const ShoppingCartTable = ({ items, total, onIncrease, onDecrease, onDelete }) => {
+const ShoppingCartTable = ({ cartItems, orderTotal, onIncrease, onDecrease, onDelete }) => {
   const renderRow = (item, idx) => {
     const { id, title, count, total } = item;
     return (
@@ -20,18 +20,18 @@ const ShoppingCartTable = ({ items, total, onIncrease, onDecrease, onDelete }) =
           <div className='wrapper-button'>
             <button
               onClick={() => onDecrease(id)}
-              className="btn btn-outline-warning btn-sm float-left">
-              <span className="fa fa-minus-circle"></span>
+              className='btn btn-outline-warning btn-sm float-left'>
+              <span className='fa fa-minus-circle'></span>
             </button>
             <button
               onClick={() => onIncrease(id)}
-              className="btn btn-outline-success btn-sm float-left">
-              <span className="fa fa-plus-circle"></span>
+              className='btn btn-outline-success btn-sm float-left'>
+              <span className='fa fa-plus-circle'></span>
             </button>
             <button
               onClick={() => onDelete(id)}
-              className="btn btn-outline-danger btn-sm float-left">
-              <span className="fa fa-trash-o"></span>
+              className='btn btn-outline-danger btn-sm float-left'>
+              <span className='fa fa-trash-o'></span>
             </button>
           </div>
         </td>
@@ -53,12 +53,12 @@ const ShoppingCartTable = ({ items, total, onIncrease, onDecrease, onDelete }) =
         </thead>
         <tbody>
           {
-            items.map(renderRow)
+            cartItems.map(renderRow)
           }
         </tbody>
       </table>
       <div className='total'>
-        Total: ${ total }
+        Total: ${ orderTotal }
       </div>
     </div>
   );
@@ -66,8 +66,8 @@ const ShoppingCartTable = ({ items, total, onIncrease, onDecrease, onDelete }) =
 
 const mapStateToProps = ( {shoppingCart : { cartItems, orderTotal }}) => {
   return {
-    items: cartItems,
-    total: orderTotal,
+    cartItems,
+    orderTotal
   }
 }
 
