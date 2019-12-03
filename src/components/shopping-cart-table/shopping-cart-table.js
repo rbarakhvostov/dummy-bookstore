@@ -17,21 +17,23 @@ const ShoppingCartTable = ({ items, total, onIncrease, onDecrease, onDelete }) =
         <td>{ count }</td>
         <td>${ total }</td>
         <td>
-          <button
-            onClick={() => onDecrease(id)}
-            className="btn btn-outline-warning btn-sm float-left">
-            <span className="fa fa-minus-circle"></span>
-          </button>
-          <button
-            onClick={() => onIncrease(id)}
-            className="btn btn-outline-success btn-sm float-left">
-            <span className="fa fa-plus-circle"></span>
-          </button>
-          <button
-            onClick={() => onDelete(id)}
-            className="btn btn-outline-danger btn-sm float-left">
-            <span className="fa fa-trash-o"></span>
-          </button>
+          <div className='wrapper-button'>
+            <button
+              onClick={() => onDecrease(id)}
+              className="btn btn-outline-warning btn-sm float-left">
+              <span className="fa fa-minus-circle"></span>
+            </button>
+            <button
+              onClick={() => onIncrease(id)}
+              className="btn btn-outline-success btn-sm float-left">
+              <span className="fa fa-plus-circle"></span>
+            </button>
+            <button
+              onClick={() => onDelete(id)}
+              className="btn btn-outline-danger btn-sm float-left">
+              <span className="fa fa-trash-o"></span>
+            </button>
+          </div>
         </td>
       </tr>
     )
