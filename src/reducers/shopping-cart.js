@@ -17,7 +17,7 @@ const updateCartItems = (cartItems, item, idx) => {
     return [
       ...cartItems.slice(0, idx),
       ...cartItems.slice(idx + 1)
-    ]
+    ];
   }
 
   if (idx < 0) {
@@ -46,10 +46,10 @@ const updateOrder = (state, bookId, amount) => {
     cartItems: newCartItems,
     orderTotal: newCartItems
                   .map(item => item.total)
-                  .reduce((a, b) => a + b),
+                  .reduce((a, b) => a + b, 0),
     numItems: newCartItems
                 .map(item => item.count)
-                .reduce((a, b) => a + b)
+                .reduce((a, b) => a + b, 0)
   }
 }
 
