@@ -6,7 +6,7 @@ import './cart-page.css';
 const CartPage = ({ cartItems }) => {
   if (cartItems.length === 0) {
     return (
-      <div class="alert alert-warning">
+      <div className="alert alert-warning">
         <span>Your shopping cart is empty</span>
       </div>
     );
