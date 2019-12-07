@@ -1,0 +1,36 @@
+.cart-page-items {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  list-style: none;
+}
+.cart-page-item {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1em;
+}
+.cart-page-item-title {
+  font-size: 1.5rem;
+}
+.cart-page-item-author {
+  margin-bottom: 1em;
+  font-style: italic;
+}
+.cart-page-item-cover {
+  flex-shrink: 0;
+  width: 180px;
+  margin-bottom: 0.5em;
+}
+.cart-page-item-cover img {
+  max-width: 100%;
+}
+.cart-page-item-author {
+  margin-bottom: 1em;
+}
+.cart-page-item-value {
+  font-size: 1.2rem;
+  color: #007bff;
+}

@@ -13,7 +13,7 @@ export default class BookstoreService {
       author: 'Douglas Crockford',
       price: 16,
       coverImage: 'https://images-na.ssl-images-amazon.com/images/I/5131OWtQRaL._SX381_BO1,204,203,200_.jpg'
-    },
+    }
   ];
 
   getBooks() {

@@ -1,14 +1,20 @@
 const updateCartItem = (book, item = {}, amount) => {
   const { id = book.id,
+          price = book.price,
           count = 0,
           title = book.title,
+          author = book.author,
+          coverImage =  book.coverImage,
           total = 0 } = item;
 
   return {
     id,
+    price,
     count: count + amount,
     title,
-    total: total + amount * book.price,
+    author,
+    coverImage,
+    total: total + amount * price,
   }
 }
 

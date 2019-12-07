@@ -4,7 +4,7 @@ import './index.css';
 
 const ErrorIndicator = () => (
   <div className='alert alert-primary'>
-    <span className='alert-text'>Book loading failed</span>
+    <span className='alert-text'>Error occured</span>
   </div>
 );
 
