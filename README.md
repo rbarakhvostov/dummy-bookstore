@@ -1,1 +1,1 @@
-[restore-rbarakhvostov.netlify.com](http://https://restore-rbarakhvostov.netlify.com/)
+[restore-rbarakhvostov.netlify.com](http://restore-rbarakhvostov.netlify.com/)
