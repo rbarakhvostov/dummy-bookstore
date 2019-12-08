@@ -1,5 +1,4 @@
 const updateBookList = (state, action) => {
-
   if (!state) {
     return {
       books: [],

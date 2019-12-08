@@ -18,26 +18,39 @@ const updateCartItem = (book, item = {}, amount) => {
   }
 }
 
+const setDataInLocalStorage = (res) => {
+  localStorage.setItem('cartItems', JSON.stringify(res));
+}
+
 const updateCartItems = (cartItems, item, idx) => {
   if (item.count === 0) {
-    return [
+    const res = [
       ...cartItems.slice(0, idx),
       ...cartItems.slice(idx + 1)
     ];
+
+    setDataInLocalStorage(res);
+    return res;
   }
 
   if (idx < 0) {
-    return [
+    const res = [
       ...cartItems,
       item
     ];
+
+    setDataInLocalStorage(res);
+    return res;
   }
 
-  return [
+  const res = [
     ...cartItems.slice(0, idx),
     item,
     ...cartItems.slice(idx + 1)
   ];
+
+  setDataInLocalStorage(res);
+  return res;
 }
 
 const updateOrder = (state, bookId, amount) => {
@@ -60,12 +73,25 @@ const updateOrder = (state, bookId, amount) => {
 }
 
 const updateShoppingCart = (state, action) => {
-
+  const localStorageCartItems = localStorage.getItem('cartItems');
+  const cartItems = localStorageCartItems 
+                      ? JSON.parse(localStorageCartItems)
+                      : [];
+  const orderTotal = localStorageCartItems
+                      ? JSON.parse(localStorageCartItems)
+                          .map(item => item.total)
+                          .reduce((a, b) => a + b, 0)
+                      : 0;
+  const numItems = localStorageCartItems
+                      ? JSON.parse(localStorageCartItems)
+                          .map(item => item.count)
+                          .reduce((a, b) => a + b, 0)
+                      : 0;
   if (!state) {
     return {
-      cartItems: [],
-      orderTotal: 0,
-      numItems: 0
+      cartItems,
+      orderTotal,
+      numItems
     }
   }
 

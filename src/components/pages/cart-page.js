@@ -16,15 +16,16 @@ const CartPage = ({ cartItems }) => {
     <ul className='cart-page-items'>
       {
         cartItems.map(item => {
+          const { id, title, author, coverImage, price, count, total } = item;
           return (
-            <li className='cart-page-item' key={item.id}>
-              <span className='cart-page-item-title'>{item.title}</span>
-              <span className='cart-page-item-author'>{item.author}</span>
+            <li className='cart-page-item' key={id}>
+              <span className='cart-page-item-title'>{title}</span>
+              <span className='cart-page-item-author'>{author}</span>
               <div className='cart-page-item-cover'>
-                <img src={ item.coverImage } alt={ item.title }/>
+                <img src={coverImage} alt={title}/>
               </div>
               <span className='cart-page-item-value'>
-                ${item.price} * {item.count} = ${item.total}
+                ${price} * {count} = ${total}
               </span>
             </li>
           );
