@@ -6,12 +6,12 @@
 
 ---
 
-### Home page
+## Home page
 
-![Home page](./public/home_page.JPG)
+![Home page](./public/home_page.jpg)
 
 ---
 
-### Cart page
+## Cart page
 
-![Cart page](./public/cart_page.JPG)
+![Cart page](./public/cart_page.jpg)
